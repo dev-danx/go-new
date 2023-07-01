@@ -23,14 +23,14 @@ To install go-new, follow these steps:
 2. Open your terminal and run the following command:
 
 ```shell
-go get github.com/dev-danx/go-new
+go install github.com/dev-danx/go-new@latest
 ```
 
 3. Once the installation is complete, you can start using go-new.
 
 ## Usage
 
-To generate a new Golang project using GoCLI, follow these steps:
+To generate a new Golang project using go-new, follow these steps:
 
 1. Open your terminal.
 
