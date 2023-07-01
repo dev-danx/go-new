@@ -3,7 +3,6 @@ package scaffolding
 import (
 	"embed"
 	"fmt"
-	"os"
 )
 
 type emptyProject struct {
@@ -28,5 +27,4 @@ func (p *emptyProject) CreateNew(name string) {
 	fmt.Println("Creating Empty Project")
 	initProject(name, files)
 	fmt.Println("Project is Created, good luck on our project!")
-	os.Exit(1)
 }

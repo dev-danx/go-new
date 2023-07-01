@@ -6,7 +6,11 @@ import (
 	"github.com/dev-danx/go-new/pkg/scaffolding"
 	"os"
 	"strings"
+	"sync"
+	"time"
 )
+
+var wg sync.WaitGroup
 
 func main() {
 	model := initialModel()
@@ -84,9 +88,14 @@ func (m projectTypes) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 				delete(m.selected, m.cursor)
 			} else {
 				m.selected[m.cursor] = struct{}{}
+				wg.Add(1)
 				go func() {
+					defer wg.Done()
 					m.choices[m.cursor].CreateNew(m.projectName)
+					time.Sleep(2 * time.Second)
 				}()
+				wg.Wait()
+				return m, tea.Quit
 			}
 		}
 	}
