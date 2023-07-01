@@ -1,4 +1,4 @@
-module go-new
+module github.com/dev-danx/go-new
 
 go 1.18
 

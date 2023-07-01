@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	tea "github.com/charmbracelet/bubbletea"
-	"go-new/pkg/scaffolding"
+	"github.com/dev-danx/go-new/pkg/scaffolding"
 	"os"
 	"strings"
 )
