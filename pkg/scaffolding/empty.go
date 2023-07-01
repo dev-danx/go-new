@@ -25,6 +25,6 @@ func (p *emptyProject) Name() string {
 
 func (p *emptyProject) CreateNew(name string) {
 	fmt.Println("Creating Empty Project")
-	initProject(name, files)
+	//initProject(name, files)
 	fmt.Println("Project is Created, good luck on our project!")
 }
