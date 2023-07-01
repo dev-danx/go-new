@@ -9,6 +9,11 @@ go-new is a command-line interface (CLI) application that allows you to quickly 
 - Easy-to-use command-line interface.
 - Fast and efficient project generation.
 
+## TODO
+- Http template
+- GRPC template
+- Azure ServiceBus template
+
 ## Installation
 
 To install go-new, follow these steps:
