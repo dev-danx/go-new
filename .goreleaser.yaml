@@ -13,7 +13,6 @@ builds:
       - linux
       - windows
       - darwin
-    main: ./cmd/go-new/main.go
 
 archives:
   - format: tar.gz
