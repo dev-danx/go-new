@@ -11,6 +11,7 @@ import (
 type ProjectScaffolding interface {
 	Name() string
 	CreateNew(projectName string)
+	readFiles() map[string]string
 }
 
 func ProjectList() []ProjectScaffolding {
