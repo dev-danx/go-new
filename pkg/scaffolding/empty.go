@@ -11,16 +11,17 @@ type emptyProject struct {
 
 func (p *emptyProject) readFiles() map[string]string {
 	files = make(map[string]string)
-	files["cmd/main.go"] = contentReader.ReadAsString(res, "fileTemplates/empty/main.go")
-	files["Dockerfile"] = contentReader.ReadAsString(res, "buildFiles/Dockerfile")
-	files["makefile"] = contentReader.ReadAsString(res, "buildFiles/makefile")
+	files["cmd/main.go"] = contentReader.ReadAsString(goFiles, "fileTemplates/empty/main.go")
+	files["Dockerfile"] = contentReader.ReadAsString(buildFiles, "buildFiles/Dockerfile")
+	files["makefile"] = contentReader.ReadAsString(buildFiles, "buildFiles/makefile")
 	return files
 }
 
 var (
 	//go:embed fileTemplates/empty/*
+	goFiles embed.FS
 	//go:embed buildFiles/*
-	res embed.FS
+	buildFiles embed.FS
 
 	files map[string]string
 )
@@ -35,7 +36,7 @@ func (p *emptyProject) Name() string {
 
 func (p *emptyProject) CreateNew(name string) {
 	fmt.Println("Creating Empty Project")
-	p.readFiles()
+	files = p.readFiles()
 	initProject(name, files)
 	fmt.Println("Project is Created, good luck on our project!")
 }

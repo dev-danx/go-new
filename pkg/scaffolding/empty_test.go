@@ -11,3 +11,9 @@ func Test_emptyProject_readFiles(t *testing.T) {
 	fmt.Print(result)
 	t.Fail()
 }
+
+func Test_emptyProject_CreateNew(t *testing.T) {
+	t.Skip()
+	p := &emptyProject{}
+	p.CreateNew("TESTING")
+}
