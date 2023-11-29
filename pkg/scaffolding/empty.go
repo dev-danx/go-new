@@ -10,6 +10,7 @@ type emptyProject struct {
 
 var (
 	//go:embed fileTemplates/empty
+	//go:embed buildFiles
 	res embed.FS
 
 	files map[string]string
