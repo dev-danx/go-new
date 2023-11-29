@@ -56,7 +56,8 @@ func initProject(name string, files map[string]string) {
 	makeFolder("cmd")
 	makeFolder("pkg")
 	makeFolder("internal")
-	makeFile("cmd/main.go", files["main.go"])
+	mainFile := "cmd/main.go"
+	makeFile(mainFile, files[mainFile])
 	dockerFile := "Dockerfile"
 	makefile := "makefile"
 	makeFile(dockerFile, files[dockerFile])
